@@ -10,7 +10,7 @@ module Spree
 
       def index
         @search = Spree::Inquiry.search params[:q]
-        @collection = @search.result.order('spree_inquiries.created_at DESC').page params[:page]
+        @collection = @search.order('spree_inquiries.created_at DESC').page params[:page]
         respond_with @collection
       end
 
